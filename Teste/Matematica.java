@@ -31,6 +31,7 @@ public class Matematica{
                         System.out.printf("| %s | %s |   V   |%n",vallog1, vallog2);
                     } else {
                         System.out.println("O resultado é:");
+                        System.out.println("| A | B | A ^ B |");
                         System.out.printf("| %s | %s |   F   |%n",vallog1, vallog2);
                     }
                 break;
