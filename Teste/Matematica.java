@@ -16,9 +16,9 @@ public class Matematica{
             System.out.println("Defina o valor lógico de B: ");
             vallog2 = scan.next();
             
-            System.out.printf("%n1  ^  Conjunção  ^  1%n");
-            System.out.println("2  V  Disjunção  V  2");
-            System.out.println("3 ->  Conjunção  -> 3");
+            System.out.printf("%n1  ^   Conjunção   ^  1%n");
+            System.out.println("2  V   Disjunção   V  2");
+            System.out.println("3 ->  Condicional  -> 3");
             System.out.println("Digite o número do conectivo: ");
             conectivo = scan.nextInt();
             System.out.println();
