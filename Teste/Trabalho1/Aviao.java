@@ -6,8 +6,8 @@ public class Aviao extends Transporte {
     private String porte;
     private int qtd_assento;
 
-    public Aviao(String tipo, String trafego, int velocidade_max, String combustivel, int qtd_combustivel, String companhia, String porte, int qtd_assento){
-        super(tipo, trafego, velocidade_max, combustivel, qtd_combustivel);
+    public Aviao(int velocidade_max, String combustivel, int qtd_combustivel, String companhia, String porte, int qtd_assento){
+        super(velocidade_max, combustivel, qtd_combustivel);
         this.companhia = companhia;
         this.porte = porte;
         this.qtd_assento = qtd_assento;
@@ -43,4 +43,6 @@ public class Aviao extends Transporte {
         System.out.println("Porte: "+this.porte);
         System.out.println("Quantidade de Assentos: "+this.qtd_assento);
     }
+
+
 }

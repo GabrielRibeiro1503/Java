@@ -6,8 +6,8 @@ public class Navio extends Transporte{
     private Boolean bote_sv;
     private int durabilidade;
 
-    public Navio(String tipo, String trafego, int velocidade_max, String combustivel, int qtd_combustivel, String tamanho, Boolean bote_sv, int durabilidade){
-        super(tipo, trafego, velocidade_max, combustivel, qtd_combustivel);
+    public Navio(int velocidade_max, String combustivel, int qtd_combustivel, String tamanho, Boolean bote_sv, int durabilidade){
+        super(velocidade_max, combustivel, qtd_combustivel);
         this.tamanho = tamanho;
         this.bote_sv = bote_sv;
         this.durabilidade = durabilidade;

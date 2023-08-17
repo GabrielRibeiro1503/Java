@@ -1,13 +1,11 @@
 package Trabalho1;
 
-public class Bicicleta extends Transporte{
+public class Moto extends Transporte{
     
-    private int tam_aro;
-    private Boolean amortecedor;
-    private int qtd_marcha;
+    private
 
-    public Bicicleta(String tipo, String trafego, int velocidade_max, String combustivel, int qtd_combustivel, int tam_aro, Boolean amortecedor, int qtd_marcha){
-        super(tipo, trafego, velocidade_max, combustivel, qtd_combustivel);
+    public Moto(int velocidade_max, String combustivel, int qtd_combustivel, int tam_aro, Boolean amortecedor, int qtd_marcha){
+        super(velocidade_max, combustivel, qtd_combustivel);
         this.tam_aro = tam_aro;
         this.amortecedor = amortecedor;
         this.qtd_marcha = qtd_marcha;
