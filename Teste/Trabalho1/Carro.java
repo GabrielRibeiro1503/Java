@@ -29,7 +29,9 @@ public class Carro extends Transporte{
     
     public void info(){
         super.info();
-        System.out.println("Marca: "+this.marca);
-        System.out.println("Modelo: "+this.modelo);
+        System.out.println("|| Marca: "+this.marca);
+        System.out.println("|| Modelo: "+this.modelo);
     }
+
+
 }

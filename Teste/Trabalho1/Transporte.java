@@ -37,8 +37,12 @@ public class Transporte {
     }
 
     public void info(){
-        System.out.println("Velocidade Máxima: "+this.velocidade_max);
-        System.out.println("Combustível: "+this.combustivel);
-        System.out.println("Quantidade de combustível: "+this.qtd_combustivel);
+        System.out.println("||===========================================");
+        System.out.println("|| Velocidade Máxima: "+this.velocidade_max);
+        System.out.println("|| Combustível: "+this.combustivel);
+        System.out.println("|| Quantidade de combustível: "+this.qtd_combustivel);
+    }
+
+    public void entrar(){
     }
 }

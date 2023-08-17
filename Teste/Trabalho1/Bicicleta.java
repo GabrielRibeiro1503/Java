@@ -1,10 +1,12 @@
 package Trabalho1;
 
-public class Moto extends Transporte{
+public class Bicicleta extends Transporte{
     
-    private
+    private int tam_aro;
+    private String amortecedor; 
+    private int qtd_marcha;
 
-    public Moto(int velocidade_max, String combustivel, int qtd_combustivel, int tam_aro, Boolean amortecedor, int qtd_marcha){
+    public Bicicleta(int velocidade_max, String combustivel, int qtd_combustivel, int tam_aro, String amortecedor, int qtd_marcha){
         super(velocidade_max, combustivel, qtd_combustivel);
         this.tam_aro = tam_aro;
         this.amortecedor = amortecedor;
@@ -19,11 +21,11 @@ public class Moto extends Transporte{
         this.tam_aro = tam_aro;
     }
 
-    public Boolean getAmortecedor(){
+    public String getAmortecedor(){
         return amortecedor;
     }
 
-    public void setAmortecedor(Boolean amortecedor){
+    public void setAmortecedor(String amortecedor){
         this.amortecedor = amortecedor;
     }
 
@@ -37,8 +39,8 @@ public class Moto extends Transporte{
 
     public void info(){
         super.info();
-        System.out.println("Tamanho Aro: "+this.tam_aro);
-        System.out.println("Amortecedor: "+this.amortecedor);
-        System.out.println("Quantidade de Marcha: "+this.qtd_marcha);
+        System.out.println("|| Tamanho Aro: "+this.tam_aro);
+        System.out.println("|| Amortecedor: "+this.amortecedor);
+        System.out.println("|| Quantidade de Marcha: "+this.qtd_marcha);
     }
 }
