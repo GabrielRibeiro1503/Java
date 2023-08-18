@@ -5,8 +5,8 @@ public class Carro extends Transporte{
     private String marca;
     private String modelo;
 
-    public Carro(int velocidade_max, String combustivel, int qtd_combustivel, String marca, String modelo){
-        super(velocidade_max, combustivel, qtd_combustivel);
+    public Carro(int velocidadeMax, String combustivel, int qtdCombustivel, String marca, String modelo){
+        super(velocidadeMax, combustivel, qtdCombustivel);
         this.marca = marca;
         this.modelo = modelo;
     }
@@ -31,6 +31,11 @@ public class Carro extends Transporte{
         super.info();
         System.out.println("|| Marca: "+this.marca);
         System.out.println("|| Modelo: "+this.modelo);
+    }
+
+    @Override
+    public void entrar(){
+        System.out.println("!! Você entrou no "+modelo+" "+marca+"!!");
     }
 
 

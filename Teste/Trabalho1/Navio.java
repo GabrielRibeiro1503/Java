@@ -3,13 +3,13 @@ package Trabalho1;
 public class Navio extends Transporte{
 
     private String tamanho;
-    private String bote_sv;
+    private String boteSv;
     private int durabilidade;
 
-    public Navio(int velocidade_max, String combustivel, int qtd_combustivel, String tamanho, String bote_sv, int durabilidade){
-        super(velocidade_max, combustivel, qtd_combustivel);
+    public Navio(int velocidadeMax, String combustivel, int qtdCombustivel, String tamanho, String boteSv, int durabilidade){
+        super(velocidadeMax, combustivel, qtdCombustivel);
         this.tamanho = tamanho;
-        this.bote_sv = bote_sv;
+        this.boteSv = boteSv;
         this.durabilidade = durabilidade;
     }
 
@@ -22,11 +22,11 @@ public class Navio extends Transporte{
     }
 
     public String getBote_sv(){
-        return bote_sv;
+        return boteSv;
     }
 
-    public void setBote_sv(String bote_sv){
-        this.bote_sv = bote_sv;
+    public void setBote_sv(String boteSv){
+        this.boteSv = boteSv;
     }
 
     public int getDurabilidade(){

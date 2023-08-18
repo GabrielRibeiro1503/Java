@@ -2,22 +2,22 @@ package Trabalho1;
 
 public class Transporte {
     
-    private int velocidade_max;
+    private int velocidadeMax;
     private String combustivel;
-    private int qtd_combustivel;
+    private int qtdCombustivel;
 
-    public Transporte(int velocidade_max, String combustivel, int qtd_combustivel){
-        this.velocidade_max = velocidade_max;
+    public Transporte(int velocidadeMax, String combustivel, int qtdCombustivel){
+        this.velocidadeMax = velocidadeMax;
         this.combustivel = combustivel;
-        this.qtd_combustivel = qtd_combustivel;
+        this.qtdCombustivel = qtdCombustivel;
     }
 
     public int getVelocidade_max(){
-        return velocidade_max;
+        return velocidadeMax;
     }
 
-    public void setVelocidade_max(int velocidade_max){
-        this.velocidade_max = velocidade_max;
+    public void setVelocidade_max(int velocidadeMax){
+        this.velocidadeMax = velocidadeMax;
     }
 
     public String getCombustivel(){
@@ -29,18 +29,19 @@ public class Transporte {
     }
 
     public int getQtd_combustivel(){
-        return qtd_combustivel;
+        return qtdCombustivel;
     }
 
-    public void setQtd_combustivel(int qtd_combustivel){
-        this.qtd_combustivel = qtd_combustivel;
+    public void setQtd_combustivel(int qtdCombustivel){
+        this.qtdCombustivel = qtdCombustivel;
     }
 
     public void info(){
+        System.out.println();
         System.out.println("||===========================================");
-        System.out.println("|| Velocidade Máxima: "+this.velocidade_max);
+        System.out.println("|| Velocidade Máxima: "+this.velocidadeMax);
         System.out.println("|| Combustível: "+this.combustivel);
-        System.out.println("|| Quantidade de combustível: "+this.qtd_combustivel);
+        System.out.println("|| Quantidade de combustível: "+this.qtdCombustivel);
     }
 
     public void entrar(){

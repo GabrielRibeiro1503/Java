@@ -2,23 +2,23 @@ package Trabalho1;
 
 public class Bicicleta extends Transporte{
     
-    private int tam_aro;
+    private int tamAro;
     private String amortecedor; 
-    private int qtd_marcha;
+    private int qtdMarcha;
 
-    public Bicicleta(int velocidade_max, String combustivel, int qtd_combustivel, int tam_aro, String amortecedor, int qtd_marcha){
-        super(velocidade_max, combustivel, qtd_combustivel);
-        this.tam_aro = tam_aro;
+    public Bicicleta(int velocidadeMax, String combustivel, int qtdCombustivel, int tamAro, String amortecedor, int qtdMarcha){
+        super(velocidadeMax, combustivel, qtdCombustivel);
+        this.tamAro = tamAro;
         this.amortecedor = amortecedor;
-        this.qtd_marcha = qtd_marcha;
+        this.qtdMarcha = qtdMarcha;
     }
 
     public int getTam_aro(){
-        return tam_aro;
+        return tamAro;
     }
 
-    public void setTam_aro(int tam_aro){
-        this.tam_aro = tam_aro;
+    public void setTam_aro(int tamAro){
+        this.tamAro = tamAro;
     }
 
     public String getAmortecedor(){
@@ -30,17 +30,22 @@ public class Bicicleta extends Transporte{
     }
 
     public int getQtd_marcha(){
-        return qtd_marcha;
+        return qtdMarcha;
     }
 
-    public void setQtd_marcha(int qtd_marcha){
-        this.qtd_marcha = qtd_marcha;
+    public void setQtd_marcha(int qtdMarcha){
+        this.qtdMarcha = qtdMarcha;
     }
 
     public void info(){
         super.info();
-        System.out.println("|| Tamanho Aro: "+this.tam_aro);
+        System.out.println("|| Tamanho Aro: "+this.tamAro);
         System.out.println("|| Amortecedor: "+this.amortecedor);
-        System.out.println("|| Quantidade de Marcha: "+this.qtd_marcha);
+        System.out.println("|| Quantidade de Marcha: "+this.qtdMarcha);
+    }
+
+    @Override
+    public void entrar(){
+
     }
 }

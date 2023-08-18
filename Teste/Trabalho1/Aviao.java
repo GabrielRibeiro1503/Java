@@ -4,13 +4,13 @@ public class Aviao extends Transporte {
     
     private String companhia;
     private String porte;
-    private int qtd_pessoas;
+    private int qtdPessoas;
 
-    public Aviao(int velocidade_max, String combustivel, int qtd_combustivel, String companhia, String porte, int qtd_pessoas){
-        super(velocidade_max, combustivel, qtd_combustivel);
+    public Aviao(int velocidadeMax, String combustivel, int qtdCombustivel, String companhia, String porte, int qtdPessoas){
+        super(velocidadeMax, combustivel, qtdCombustivel);
         this.companhia = companhia;
         this.porte = porte;
-        this.qtd_pessoas = qtd_pessoas;
+        this.qtdPessoas = qtdPessoas;
     }
 
     public String getCompanhia(){
@@ -30,18 +30,18 @@ public class Aviao extends Transporte {
     }
 
     public int getQtd_pessoas(){
-        return qtd_pessoas;
+        return qtdPessoas;
     }
 
-    public void setQtd_pessoas(int qtd_pessoas){
-        this.qtd_pessoas = qtd_pessoas;
+    public void setQtd_pessoas(int qtdPessoas){
+        this.qtdPessoas = qtdPessoas;
     }
 
     public void info(){
         super.info();
         System.out.println("|| Companhia: "+this.companhia);
         System.out.println("|| Porte: "+this.porte);
-        System.out.println("|| Quantidade de Pessoas: "+this.qtd_pessoas);
+        System.out.println("|| Quantidade de Pessoas: "+this.qtdPessoas);
     }
 
 
