@@ -1,18 +1,25 @@
 package Herança;
 
+import java.util.Scanner;
+
 public class Atividade {
      
     public static void main(String[] args){
 
-        Carros carro1 = new Carros("Golf");
-        Carros carro2 = new Carros("HIV");
-        CarroCombate carro3 = new CarroCombate("Civic", 69);
-        CarroCombate carro4 = new CarroCombate("Bruno Gay", 95);
+        Scanner scan = new Scanner(System.in);
+        
+        String nome;
+        int blindagem;
 
-        carro1.Info();
-        carro2.Info();
-        carro3.Info();
-        carro4.Info();
+        System.out.println("Digite o nome:");
+        nome = scan.next();
+        System.out.println("Digite a blindagem:");
+        blindagem = scan.nextInt();
+
+        CarroCombate carro = new CarroCombate(nome, blindagem);
+
+        
+        carro.Info();
 
     }
 }
