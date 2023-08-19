@@ -4,11 +4,21 @@ public class Carro extends Transporte{
     
     private String marca;
     private String modelo;
+    private Boolean entrar;
 
     public Carro(int velocidadeMax, String combustivel, int qtdCombustivel, String marca, String modelo){
         super(velocidadeMax, combustivel, qtdCombustivel);
         this.marca = marca;
         this.modelo = modelo;
+        this.entrar = false;
+    }
+
+    public Boolean getEntrar(){
+        return entrar;
+    }
+
+    public void setEntrar(Boolean entrar){
+        this.entrar = entrar;
     }
 
     public String getMarca(){
@@ -35,8 +45,22 @@ public class Carro extends Transporte{
 
     @Override
     public void entrar(){
-        System.out.println("!! Você entrou no "+modelo+" "+marca+"!!");
+        if (this.entrar == false){
+            this.entrar = true;
+            System.out.println("|| !! Você entrou no "+marca+" "+modelo+" !!");
+        } else {
+            System.out.println("|| !! Você já está dentro do carro !!");
+        }    
     }
 
+    @Override
+    public void sair(){
+        if (this.entrar == true){
+            this.entrar = false;
+            System.out.println("|| !! Você saiu do "+marca+" "+modelo+" !!");
+        } else {
+            System.out.println("|| !! Você já está fora do carro !!");
+        }
+    }
 
 }

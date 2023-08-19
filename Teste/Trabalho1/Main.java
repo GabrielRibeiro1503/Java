@@ -9,7 +9,7 @@ public class Main {
         Scanner scan = new Scanner(System.in);
 
         //Código
-        int escolhaInicio = 1, escolha1 = 1, escolha2;
+        int escolhaInicio = 0, escolha1 = 1, escolha2;
 
         //Transporte
         int velocidadeMax, qtdCombustivel;
@@ -18,6 +18,8 @@ public class Main {
         //Carro
         String modelo, marca;
         Carro carro1 = null;
+        Carro carro2 = null;
+        int gps;
         
         //Bicicleta
         int tamAro, qtdMarcha;
@@ -31,7 +33,8 @@ public class Main {
         String tamanho, bote_sv;
         int durabilidade;
 
-        while(escolhaInicio ){
+        //Escolher o veículo
+        while(escolhaInicio != 1 && escolhaInicio != 2 && escolhaInicio != 3 && escolhaInicio != 4){
             System.out.println("||======================================================||");
             System.out.println("||       !! Bem Vindo ao Role-Play de veículos !!       ||");
             System.out.println("||======================================================||");
@@ -39,43 +42,57 @@ public class Main {
             System.out.println("||======================================================||");
             System.out.println("|| 1 - Carro || 2 - Bicicleta || 3 - Avião || 4 - Navio ||");
             System.out.println("||======================================================||");
+            System.out.printf("|| R: ");
             escolhaInicio = scan.nextInt();
+            if (escolhaInicio != 1 && escolhaInicio != 2 && escolhaInicio != 3 && escolhaInicio != 4){
+                System.out.println("|| * Opção inválida *");
+            }
         }
-        switch (escolhaInicio){
 
+        switch (escolhaInicio){
             case 1:
 
                 while (escolha1 == 1){
 
-                    //Contrução do carro
-                    System.out.println("=====================================");
-                    System.out.println("Vamos montar as informações do carro!");
-                    System.out.println("Informe a velocidade máxima do carro:");
+                    //Contrução do carro principal
+                    System.out.println("||=======================================|");
+                    System.out.println("|| Vamos montar as informações do carro!");
+                    System.out.println("|| Informe a velocidade máxima do carro");
+                    System.out.printf("|| R: ");
                     velocidadeMax = scan.nextInt();
                     if (velocidadeMax >= 150){
-                        System.out.println("Quanta potência!!");
+                        System.out.println("|| Quanta potência!!");
                     } else {
-                        System.out.println("Me parece lento!!");
+                        System.out.println("|| Me parece lento!!");
                     }
-                    System.out.println("=============================================");
-                    System.out.println("Digite o tipo de combustível que ele consome:");
+
+                    System.out.println("||==============================================|");
+                    System.out.println("|| Digite o tipo de combustível que ele consome");
+                    System.out.printf("|| R: ");
                     combustivel = scan.next();
-                    System.out.println("====================================================");
-                    System.out.println("Digite a quantidade máxima de combustível no tanque:");
+
+                    System.out.println("||=====================================================|");
+                    System.out.println("|| Digite a quantidade máxima de combustível no tanque");
+                    System.out.printf("|| R: ");
                     qtdCombustivel = scan.nextInt();
-                    System.out.println("Seu tanque está cheio agora!!");
-                    System.out.println("========================");
-                    System.out.println("Digite a marca do carro:");
+
+                    System.out.println("|| Seu tanque está cheio agora!!");
+                    System.out.println("||=========================|");
+                    System.out.println("|| Digite a marca do carro");
+                    System.out.printf("|| R: ");
                     marca = scan.next();
-                    System.out.println("Digite o modelo do carro:");
+                    System.out.println("|| Digite o modelo do carro");
+                    System.out.printf("|| R: ");
                     modelo = scan.next();
-                    System.out.println("Um "+marca+" "+modelo+" é interessante!!");
+                    System.out.println("|| Um "+marca+" "+modelo+" é interessante!!");
+
                     carro1 = new Carro(velocidadeMax, combustivel, qtdCombustivel, marca, modelo);
 
                     //Primeiro painel de funcionalidade
                     System.out.println("||============================================================================||");                    
                     System.out.println("|| 1 - Reiniciar as informações || 2 - Entrar no Carro || 3 - Ver informações ||");
                     System.out.println("||============================================================================||");
+                    System.out.printf("|| R: ");
                     escolha1 = scan.nextInt();
 
                     switch(escolha1){
@@ -85,10 +102,10 @@ public class Main {
                         case 3:
                             while(escolha1 == 3){
                                 carro1.info();
-                                //Primeiro painel de funcionalidade
                                 System.out.println("||============================================================================||");                    
                                 System.out.println("|| 1 - Reiniciar as informações || 2 - Entrar no Carro || 3 - Ver informações ||");
                                 System.out.println("||============================================================================||");
+                                System.out.printf("|| R: ");
                                 escolha1 = scan.nextInt();
                             }
                             if(escolha1 == 2){
@@ -98,52 +115,115 @@ public class Main {
                     }
                 }
 
-                
-                //Segundo painel de funcionalidade
+                escolha1 = 1;
+
+                //Segundo painel de funcionalidade        ----- A PARTE DE CIMA ESTA CERTO -----
                 System.out.println("||================================================================================||");                    
                 System.out.println("|| 1 - Criar outro carro para tirar um rachão || 2 - Sair do carro || 3 - Dirigir ||");
                 System.out.println("||================================================================================||");
+                System.out.printf("|| R: ");
                 escolha2 = scan.nextInt();
 
                 switch(escolha2){
                     case 1:
 
+                        while(escolha1 == 1){
+
                             //Contrução do segundo carro
-                            System.out.println("=====================================");
-                            System.out.println("Vamos montar as informações do carro!");
-                            System.out.println("Informe a velocidade máxima do carro:");
+                            System.out.println("||==============================================|");
+                            System.out.println("|| Vamos montar as informações do segundo carro!");
+                            System.out.println("|| Informe a velocidade máxima do carro");
+                            System.out.printf("|| R: ");
                             velocidadeMax = scan.nextInt();
                             if (velocidadeMax >= 150){
-                                System.out.println("Quanta potência!!");
+                                System.out.println("|| Quanta potência!!");
                             } else {
-                                System.out.println("Me parece lento!!");
+                                System.out.println("|| Me parece lento!!");
                             }
-                            System.out.println("=============================================");
-                            System.out.println("Digite o tipo de combustível que ele consome:");
-                            combustivel = scan.next();
-                            System.out.println("====================================================");
-                            System.out.println("Digite a quantidade máxima de combustível no tanque:");
-                            qtdCombustivel = scan.nextInt();
-                            System.out.println("Seu tanque está cheio agora!!");
-                            System.out.println("========================");
-                            System.out.println("Digite a marca do carro:");
-                            marca = scan.next();
-                            System.out.println("Digite o modelo do carro:");
-                            modelo = scan.next();
-                            System.out.println("Um "+marca+" "+modelo+" é interessante!!");
-                            Carro carro2 = new Carro(velocidadeMax, combustivel, qtdCombustivel, marca, modelo);
-        
-                            carro1.info();
-                            carro2.info();
 
-                            //Primeiro painel de funcionalidade
+                            System.out.println("||==============================================|");
+                            System.out.println("|| Digite o tipo de combustível que ele consome");
+                            System.out.printf("|| R: ");
+                            combustivel = scan.next();
+
+                            System.out.println("||=====================================================|");
+                            System.out.println("|| Digite a quantidade máxima de combustível no tanque");
+                            System.out.printf("|| R: ");
+                            qtdCombustivel = scan.nextInt();
+
+                            System.out.println("|| Seu tanque está cheio agora!!");
+                            System.out.println("||=========================|");
+                            System.out.println("|| Digite a marca do carro");
+                            System.out.printf("|| R: ");
+                            marca = scan.next();
+                            System.out.println("|| Digite o modelo do carro");
+                            System.out.printf("|| R: ");
+                            modelo = scan.next();
+                            System.out.println("|| Um "+marca+" "+modelo+" é interessante!!");
+
+                            carro2 = new Carro(velocidadeMax, combustivel, qtdCombustivel, marca, modelo);
+
+                            //Primeiro painel de funcionalidade do segundo carro
                             System.out.println("||============================================================================||");                    
-                            System.out.println("|| 1 - Reiniciar as informações || 2 - Entrar no Carro || 3 - Ver informações ||");
+                            System.out.println("|| 1 - Reiniciar as informações || 2 - Iniciar corrida || 3 - Ver informações ||");
                             System.out.println("||============================================================================||");
-                            System.out.println();
+                            System.out.printf("|| R: ");
                             escolha1 = scan.nextInt();
-                        
+
+                            switch(escolha1){
+                                case 2:
+                                    if (carro1.getVelocidadeMax() > carro2.getVelocidadeMax()){
+                                        System.out.println("||==================================|");
+                                        System.out.println("|| O seu carro ganhou esse racha !!");
+                                        System.out.println("|| Parabéns !!");
+                                    } else if (carro1.getVelocidadeMax() < carro2.getVelocidadeMax()){
+                                        System.out.println("||=============================================|");
+                                        System.out.println("|| Infelizmente ele foi mais rápidoque você !!");
+                                        System.out.println("|| Você perdeu !!");
+                                    } else {
+                                        System.out.println("||====================================|");
+                                        System.out.println("|| Os dois são velozes !!");
+                                        System.out.println("|| Tivemos um empate !!");
+                                    }
+                                break;
+                                case 3:
+                                    while(escolha1 == 3){
+                                        carro1.info();
+                                        System.out.println("||============================================================================||");                    
+                                        System.out.println("|| 1 - Reiniciar as informações || 2 - Iniciar corrida || 3 - Ver informações ||");
+                                        System.out.println("||============================================================================||");
+                                        System.out.printf("|| R: ");
+                                        escolha1 = scan.nextInt();
+                                    }
+                                    if(escolha1 == 2){
+                                        if (carro1.getVelocidadeMax() > carro2.getVelocidadeMax()){
+                                            System.out.println("||==================================|");
+                                            System.out.println("|| O seu carro ganhou esse racha !!");
+                                            System.out.println("|| Parabéns !!");
+                                        } else if (carro1.getVelocidadeMax() < carro2.getVelocidadeMax()){
+                                            System.out.println("||=============================================|");
+                                            System.out.println("|| Infelizmente ele foi mais rápidoque você !!");
+                                            System.out.println("|| Você perdeu !!");
+                                        } else {
+                                            System.out.println("||========================|");
+                                            System.out.println("|| Os dois são velozes !!");
+                                            System.out.println("|| Tivemos um empate !!");
+                                        }
+                                    }
+                                break;
+                            }
+                        }
+
                     break;
+                    case 2:
+                        carro1.sair();
+                    break;
+                    case 3:
+                        System.out.println("||===========================================================|");
+                        System.out.println("|| Informe ao seu GPS qual a distância do local onde quer ir");
+                        System.out.printf("|| R: ");
+                        gps = scan.nextInt();
+                        // PAREI AQUI NO CASE 3 !!!!!!!!!!!!!!!!!!!
                 }
                 
             break;

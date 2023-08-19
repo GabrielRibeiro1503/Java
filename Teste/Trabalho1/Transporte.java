@@ -12,11 +12,11 @@ public class Transporte {
         this.qtdCombustivel = qtdCombustivel;
     }
 
-    public int getVelocidade_max(){
+    public int getVelocidadeMax(){
         return velocidadeMax;
     }
 
-    public void setVelocidade_max(int velocidadeMax){
+    public void setVelocidadeMax(int velocidadeMax){
         this.velocidadeMax = velocidadeMax;
     }
 
@@ -28,22 +28,27 @@ public class Transporte {
         this.combustivel = combustivel;
     }
 
-    public int getQtd_combustivel(){
+    public int getQtdCombustivel(){
         return qtdCombustivel;
     }
 
-    public void setQtd_combustivel(int qtdCombustivel){
+    public void setQtdCombustivel(int qtdCombustivel){
         this.qtdCombustivel = qtdCombustivel;
     }
 
     public void info(){
         System.out.println();
-        System.out.println("||===========================================");
+        System.out.println("||===========================================|");
         System.out.println("|| Velocidade Máxima: "+this.velocidadeMax);
         System.out.println("|| Combustível: "+this.combustivel);
         System.out.println("|| Quantidade de combustível: "+this.qtdCombustivel);
     }
 
     public void entrar(){
+
+    }
+
+    public void sair(){
+
     }
 }
