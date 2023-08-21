@@ -1,25 +1,29 @@
 package Trabalho1;
 
 import java.util.Scanner;
+import java.util.Random;
 
 public class Main {
     
     public static void main(String[] args){
 
         Scanner scan = new Scanner(System.in);
+        Random rand = new Random();
 
         //Código
-        int escolhaInicio = 0, escolha1 = 1, escolha2;
+        int escolhaInicio = 0, escolha1 = 1, escolha2, escolha3 = 1, escolha4 = 1;
 
         //Transporte
-        int velocidadeMax, qtdCombustivel;
+        int velocidadeMax;
+        float qtdCombustivel;
         String combustivel;
 
         //Carro
-        String modelo, marca;
+        String modelo, marca, destino;
         Carro carro1 = null;
         Carro carro2 = null;
-        int gps;
+        int corrida;
+        float kmL, gps;
         
         //Bicicleta
         int tamAro, qtdMarcha;
@@ -172,23 +176,34 @@ public class Main {
 
                             switch(escolha1){
                                 case 2:
-                                    if (carro1.getVelocidadeMax() > carro2.getVelocidadeMax()){
-                                        System.out.println("||==================================|");
-                                        System.out.println("|| O seu carro ganhou esse racha !!");
-                                        System.out.println("|| Parabéns !!");
-                                    } else if (carro1.getVelocidadeMax() < carro2.getVelocidadeMax()){
-                                        System.out.println("||=============================================|");
-                                        System.out.println("|| Infelizmente ele foi mais rápidoque você !!");
-                                        System.out.println("|| Você perdeu !!");
-                                    } else {
-                                        System.out.println("||====================================|");
-                                        System.out.println("|| Os dois são velozes !!");
-                                        System.out.println("|| Tivemos um empate !!");
+
+                                    while(escolha3 == 1){
+
+                                        corrida = rand.nextInt(3);
+                                        if(corrida == 0){
+                                            System.out.println("||==================================|");
+                                            System.out.println("|| O seu carro ganhou esse racha !!");
+                                            System.out.println("|| Parabéns !!");
+                                        } else if(corrida == 1){
+                                            System.out.println("||=============================================|");
+                                            System.out.println("|| Infelizmente ele foi mais rápido que você !!");
+                                            System.out.println("|| Você perdeu !!"); 
+                                        } else {
+                                            System.out.println("||========================|");
+                                            System.out.println("|| Os dois são velozes !!");
+                                            System.out.println("|| Tivemos um empate !!");
+                                        }
+                                        System.out.println("||=====================================||");
+                                        System.out.println("|| Deseja correr novamente? Sim // Não ||");
+                                        System.out.println("||=====================================||");
+                                        System.out.printf("|| R: ");
+                                        escolha3 = scan.nextInt();
+
                                     }
                                 break;
                                 case 3:
                                     while(escolha1 == 3){
-                                        carro1.info();
+                                        carro2.info();
                                         System.out.println("||============================================================================||");                    
                                         System.out.println("|| 1 - Reiniciar as informações || 2 - Iniciar corrida || 3 - Ver informações ||");
                                         System.out.println("||============================================================================||");
@@ -196,18 +211,28 @@ public class Main {
                                         escolha1 = scan.nextInt();
                                     }
                                     if(escolha1 == 2){
-                                        if (carro1.getVelocidadeMax() > carro2.getVelocidadeMax()){
-                                            System.out.println("||==================================|");
-                                            System.out.println("|| O seu carro ganhou esse racha !!");
-                                            System.out.println("|| Parabéns !!");
-                                        } else if (carro1.getVelocidadeMax() < carro2.getVelocidadeMax()){
-                                            System.out.println("||=============================================|");
-                                            System.out.println("|| Infelizmente ele foi mais rápidoque você !!");
-                                            System.out.println("|| Você perdeu !!");
-                                        } else {
-                                            System.out.println("||========================|");
-                                            System.out.println("|| Os dois são velozes !!");
-                                            System.out.println("|| Tivemos um empate !!");
+                                        while(escolha3 == 1){
+
+                                            corrida = rand.nextInt(3);
+                                            if(corrida == 0){
+                                                System.out.println("||==================================|");
+                                                System.out.println("|| O seu carro ganhou esse racha !!");
+                                                System.out.println("|| Parabéns !!");
+                                            } else if(corrida == 1){
+                                                System.out.println("||=============================================|");
+                                                System.out.println("|| Infelizmente ele foi mais rápido que você !!");
+                                                System.out.println("|| Você perdeu !!"); 
+                                            } else {
+                                                System.out.println("||========================|");
+                                                System.out.println("|| Os dois são velozes !!");
+                                                System.out.println("|| Tivemos um empate !!");
+                                            }
+                                            System.out.println("||=====================================||");
+                                            System.out.println("|| Deseja correr novamente? Sim // Não ||");
+                                            System.out.println("||=====================================||");
+                                            System.out.printf("|| R: ");
+                                            escolha3 = scan.nextInt();
+    
                                         }
                                     }
                                 break;
@@ -219,11 +244,55 @@ public class Main {
                         carro1.sair();
                     break;
                     case 3:
-                        System.out.println("||===========================================================|");
-                        System.out.println("|| Informe ao seu GPS qual a distância do local onde quer ir");
-                        System.out.printf("|| R: ");
-                        gps = scan.nextInt();
-                        // PAREI AQUI NO CASE 3 !!!!!!!!!!!!!!!!!!!
+
+                        while(escolha4 == 1){
+                            System.out.println("||=========================|");
+                            System.out.println("|| informe o nome do local");
+                            System.out.println("|| R:");
+                            destino = scan.next();
+                            System.out.println("||===========================================================|");
+                            System.out.println("|| Informe ao seu GPS qual a distância do local onde quer ir");
+                            System.out.printf("|| R: ");
+                            gps = scan.nextInt();
+
+                            System.out.println("|| 1 - Reiniciar GPS || 2 - Iniciar ||");
+                            escolha4 = scan.nextInt();
+
+                            if(escolha4 == 2){
+
+                                kmL = gps/13;
+
+                                if(kmL <= carro1.getQtdCombustivel()){
+
+                                    carro1.setQtdCombustivel(carro1.getQtdCombustivel() - kmL);
+                                    System.out.println("||=============================|");
+                                    System.out.println("|| Você chegou ao seu destino:");
+                                    System.out.println("|| "+destino);
+
+                                } else if(kmL >= carro1.getQtdCombustivel()){
+                                    escolha2 = 0;
+                                    while(kmL > carro1.getQtdCombustivel() || escolha2 == 2){
+                                        escolha2 = 0;
+                                        gps = (kmL - carro1.getQtdCombustivel())*13;
+                                        System.out.println("|| Você já rodou bastante!! mas falta "+gps+"km para chegar ao destino");
+                                        System.out.println("|| Deseja abastecer o poçante? 1 - Sim 2 nao");
+                                        escolha2 = scan.nextInt();
+
+                                        if(escolha2 == 1){
+                                            carro1.abastecer();
+                                        } else {
+                                            System.out.println("|| Você morreu na estrada com fome e sede x(");
+                                            System.out.println("||===========================================|");
+                                        }
+                                    }
+                                    System.out.println("||=============================|");
+                                    System.out.println("|| Você chegou ao seu destino:");
+                                    System.out.println("|| "+destino);
+                                    System.out.println("|| !! Obrigado por usar esse programa !!");
+                                    System.out.println("||=======================================|");
+                                }
+                            }
+                        }
                 }
                 
             break;

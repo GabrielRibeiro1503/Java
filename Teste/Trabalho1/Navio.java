@@ -6,7 +6,7 @@ public class Navio extends Transporte{
     private String boteSv;
     private int durabilidade;
 
-    public Navio(int velocidadeMax, String combustivel, int qtdCombustivel, String tamanho, String boteSv, int durabilidade){
+    public Navio(int velocidadeMax, String combustivel, float qtdCombustivel, String tamanho, String boteSv, int durabilidade){
         super(velocidadeMax, combustivel, qtdCombustivel);
         this.tamanho = tamanho;
         this.boteSv = boteSv;

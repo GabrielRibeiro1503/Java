@@ -4,9 +4,9 @@ public class Transporte {
     
     private int velocidadeMax;
     private String combustivel;
-    private int qtdCombustivel;
+    private float qtdCombustivel;
 
-    public Transporte(int velocidadeMax, String combustivel, int qtdCombustivel){
+    public Transporte(int velocidadeMax, String combustivel, float qtdCombustivel){
         this.velocidadeMax = velocidadeMax;
         this.combustivel = combustivel;
         this.qtdCombustivel = qtdCombustivel;
@@ -28,11 +28,11 @@ public class Transporte {
         this.combustivel = combustivel;
     }
 
-    public int getQtdCombustivel(){
+    public float getQtdCombustivel(){
         return qtdCombustivel;
     }
 
-    public void setQtdCombustivel(int qtdCombustivel){
+    public void setQtdCombustivel(float qtdCombustivel){
         this.qtdCombustivel = qtdCombustivel;
     }
 
@@ -49,6 +49,10 @@ public class Transporte {
     }
 
     public void sair(){
+
+    }
+
+    public void bater(){
 
     }
 }

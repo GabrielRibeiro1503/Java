@@ -6,7 +6,7 @@ public class Bicicleta extends Transporte{
     private String amortecedor; 
     private int qtdMarcha;
 
-    public Bicicleta(int velocidadeMax, String combustivel, int qtdCombustivel, int tamAro, String amortecedor, int qtdMarcha){
+    public Bicicleta(int velocidadeMax, String combustivel, float qtdCombustivel, int tamAro, String amortecedor, int qtdMarcha){
         super(velocidadeMax, combustivel, qtdCombustivel);
         this.tamAro = tamAro;
         this.amortecedor = amortecedor;

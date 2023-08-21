@@ -6,7 +6,7 @@ public class Aviao extends Transporte {
     private String porte;
     private int qtdPessoas;
 
-    public Aviao(int velocidadeMax, String combustivel, int qtdCombustivel, String companhia, String porte, int qtdPessoas){
+    public Aviao(int velocidadeMax, String combustivel, float qtdCombustivel, String companhia, String porte, int qtdPessoas){
         super(velocidadeMax, combustivel, qtdCombustivel);
         this.companhia = companhia;
         this.porte = porte;
