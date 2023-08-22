@@ -11,7 +11,7 @@ public class Main {
         Random rand = new Random();
 
         //Código
-        int escolhaInicio = 0, escolha1 = 1, escolha2, escolha3 = 1, escolha4 = 1;
+        int escolhaInicio = 0, escolha1 = 1, escolha2, escolha3 = 1, escolha4 = 1, morrer;
 
         //Transporte
         int velocidadeMax;
@@ -227,9 +227,9 @@ public class Main {
                                                 System.out.println("|| Os dois são velozes !!");
                                                 System.out.println("|| Tivemos um empate !!");
                                             }
-                                            System.out.println("||=====================================||");
-                                            System.out.println("|| Deseja correr novamente? Sim // Não ||");
-                                            System.out.println("||=====================================||");
+                                            System.out.println("||==============================================||");
+                                            System.out.println("|| Deseja correr novamente? 1 - Sim // 2 - Não ||");
+                                            System.out.println("||==============================================||");
                                             System.out.printf("|| R: ");
                                             escolha3 = scan.nextInt();
     
@@ -240,59 +240,77 @@ public class Main {
                         }
 
                     break;
+
                     case 2:
                         carro1.sair();
                     break;
+
                     case 3:
 
                         while(escolha4 == 1){
+
                             System.out.println("||=========================|");
-                            System.out.println("|| informe o nome do local");
-                            System.out.println("|| R:");
+                            System.out.println("|| Informe o nome do local");
+                            System.out.printf("|| R:");
                             destino = scan.next();
+
                             System.out.println("||===========================================================|");
                             System.out.println("|| Informe ao seu GPS qual a distância do local onde quer ir");
                             System.out.printf("|| R: ");
                             gps = scan.nextInt();
 
+                            System.out.println("||==================================||");
                             System.out.println("|| 1 - Reiniciar GPS || 2 - Iniciar ||");
+                            System.out.println("||==================================||");
+                            System.out.printf("|| R: ");
                             escolha4 = scan.nextInt();
 
                             if(escolha4 == 2){
 
                                 kmL = gps/13;
+                                morrer = rand.nextInt(10);
 
-                                if(kmL <= carro1.getQtdCombustivel()){
+                                if(morrer == 0){
+
+                                    carro1.bater();
+
+                                }else if(kmL <= carro1.getQtdCombustivel()){
 
                                     carro1.setQtdCombustivel(carro1.getQtdCombustivel() - kmL);
-                                    System.out.println("||=============================|");
-                                    System.out.println("|| Você chegou ao seu destino:");
-                                    System.out.println("|| "+destino);
+                                    System.out.println("||============================================|");
+                                    System.out.println("|| Você chegou ao seu destino: "+destino);
 
-                                } else if(kmL >= carro1.getQtdCombustivel()){
+                                }else if(kmL >= carro1.getQtdCombustivel()){
+
                                     escolha2 = 0;
+                                    
                                     while(kmL > carro1.getQtdCombustivel() || escolha2 == 2){
                                         escolha2 = 0;
+                                        
                                         gps = (kmL - carro1.getQtdCombustivel())*13;
+                                        System.out.println("||==========================================================================|");
                                         System.out.println("|| Você já rodou bastante!! mas falta "+gps+"km para chegar ao destino");
-                                        System.out.println("|| Deseja abastecer o poçante? 1 - Sim 2 nao");
+                                        System.out.println("|| Deseja abastecer o poçante? 1 - SIM // 2 - NÃO");
+                                        System.out.printf("|| R: ");
                                         escolha2 = scan.nextInt();
 
                                         if(escolha2 == 1){
                                             carro1.abastecer();
                                         } else {
-                                            System.out.println("|| Você morreu na estrada com fome e sede x(");
                                             System.out.println("||===========================================|");
+                                            System.out.println("|| Você morreu na estrada com fome e sede !!");
                                         }
                                     }
                                     System.out.println("||=============================|");
-                                    System.out.println("|| Você chegou ao seu destino:");
-                                    System.out.println("|| "+destino);
-                                    System.out.println("|| !! Obrigado por usar esse programa !!");
-                                    System.out.println("||=======================================|");
+                                    System.out.println("|| Você chegou ao seu destino: "+destino);
                                 }
                             }
+                            System.out.println("||===========================================||");
+                            System.out.println("|| 1 - Viajar novamente || 2 - Sair do carro ||");
+                            System.out.println("||===========================================||");
+                            escolha4 = scan.nextInt();
                         }
+                    break;
                 }
                 
             break;

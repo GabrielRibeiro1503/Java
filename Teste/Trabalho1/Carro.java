@@ -19,14 +19,14 @@ public class Carro extends Transporte{
         this.marca = marca;
     }
 
-    public String getModelo() {
+    public String getModelo(){
         return modelo;
     }
 
     public void setModelo(String modelo){
         this.modelo = modelo;
     }
-    
+
     public void info(){
         super.info();
         System.out.println("|| Marca: "+this.marca);
@@ -50,10 +50,11 @@ public class Carro extends Transporte{
         System.out.println("||=========================================|");
     }
 
-    @Override
-    public void bater(){
-        System.out.println("|| Você bateu o carro no trajeto e morreu x(");
-        System.out.println("||===========================================|");
-    }
 
+    public void bater(){
+            System.out.println("|| Você bateu o carro no trajeto e morreu !!");
+            System.out.println("||===========================================|");
+            System.out.println("|| !! Obrigado por usar esse programa !! ");
+            System.out.println("||=========================================|");
+    }
 }
