@@ -37,7 +37,6 @@ public class Transporte {
     }
 
     public void info(){
-        System.out.println();
         System.out.println("||===========================================|");
         System.out.println("|| Velocidade Máxima: "+this.velocidadeMax);
         System.out.println("|| Combustível: "+this.combustivel);
@@ -45,14 +44,18 @@ public class Transporte {
     }
 
     public void entrar(){
-
+        System.out.println("|| !! Você entrou no veículo !!");
     }
 
-    public void sair(){
 
+    public void sair(){
+        System.out.println("||=========================================|");
+        System.out.println("|| !! Você saiu do veículo !!");
+        System.out.println("|| !! Obrigado por usar esse programa !!");
+        System.out.println("||=========================================|");
     }
 
     public void bater(){
-
+        System.out.println("|| Você bateu o veículo e morreu !!");
     }
 }

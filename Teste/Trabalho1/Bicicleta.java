@@ -62,6 +62,7 @@ public class Bicicleta extends Transporte{
 
     @Override
     public void sair(){
+        System.out.println("||=======================================|");
         System.out.println("|| !! Você desceu da "+this.nome+" !!");
         System.out.println("|| !! Obrigado por usar esse programa !!");
         System.out.println("||=======================================|");
