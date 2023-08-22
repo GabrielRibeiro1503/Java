@@ -50,11 +50,9 @@ public class Carro extends Transporte{
         System.out.println("||=========================================|");
     }
 
-
+    @Override
     public void bater(){
             System.out.println("|| Você bateu o carro no trajeto e morreu !!");
             System.out.println("||===========================================|");
-            System.out.println("|| !! Obrigado por usar esse programa !! ");
-            System.out.println("||=========================================|");
     }
 }
