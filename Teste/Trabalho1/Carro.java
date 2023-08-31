@@ -45,8 +45,9 @@ public class Carro extends Transporte{
 
     @Override
     public void sair(){
+        System.out.println("||=========================================|");
         System.out.println("|| !! Você saiu do "+marca+" "+modelo+" !!");
-        System.out.println("|| !! Obrigado por usar esse programa !! ");
+        System.out.println("|| !! Obrigado por usar esse programa !!");
         System.out.println("||=========================================|");
     }
 

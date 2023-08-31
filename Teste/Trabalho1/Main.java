@@ -31,19 +31,17 @@ public class Main {
         Bicicleta bicicleta1 = null;
         Bicicleta bicicleta2 = null;
 
-        //Avião
-        String companhia, porte;
-        int qtdPessoas;
-
         //Escolher o veículo
+        // ======================= A ideia era fazer 4 veículos mas não deu tempo ;-;
+
         while(escolhaInicio != 1 && escolhaInicio != 2 && escolhaInicio != 3 && escolhaInicio != 4){
-            System.out.println("||==========================================||");
-            System.out.println("|| !! Bem Vindo ao Role-Play de veículos !! ||");
-            System.out.println("||==========================================||");
-            System.out.println("||   !! Para comerçarmos escolha o seu !!   ||");
-            System.out.println("||==========================================||");
-            System.out.println("|| 1 - Carro || 2 - Bicicleta || 3 - Avião  ||");
-            System.out.println("||==========================================||");
+            System.out.println("||============================================||");
+            System.out.println("||  !! Bem Vindo ao Role-Play de veículos !!  ||");
+            System.out.println("||============================================||");
+            System.out.println("||    !! Para comerçarmos escolha o seu !!    ||");
+            System.out.println("||=====================||=====================||");
+            System.out.println("||     1 - Carro       ||    2 - Bicicleta    ||");
+            System.out.println("||=====================||=====================||");
             System.out.printf("|| R: ");
             escolhaInicio = scan.nextInt();
             if (escolhaInicio != 1 && escolhaInicio != 2 && escolhaInicio != 3 && escolhaInicio != 4){
@@ -170,6 +168,7 @@ public class Main {
                             escolha1 = scan.nextInt();
 
                             switch(escolha1){
+                                
                                 //Corrida entre os dois carros
                                 case 2:              
                                     while(escolha3 == 1){
@@ -434,6 +433,7 @@ public class Main {
                             escolha1 = scan.nextInt();
 
                             switch(escolha1){
+
                                 //Corrida entre as duas bicicletas
                                 case 2:              
                                     while(escolha3 == 1){
@@ -512,46 +512,73 @@ public class Main {
                             System.out.printf("|| R: ");
                             escolha4 = scan.nextInt();
 
-                            pessoas = rand.nextInt(30);
+                            escolha3 = 1;
                             switch(escolha4){
                                 case 1:
-                                    nose = rand.nextInt(3);
-                                    if(nose == 0){
-                                        System.out.println("||===================|");
-                                        System.out.println("|| Que nose épico !!");
-                                    }else if(nose == 1){
-                                        System.out.println("||==================================|");
-                                        System.out.println("|| Você caiu e geral riu de você !!");
-                                    }else if(nose == 2){
-                                        bicicleta1.bater();
+                                    while(escolha3 == 1){
+                                        pessoas = rand.nextInt(30);
+                                        nose = rand.nextInt(3);
+                                        if(nose == 0){
+                                            System.out.println("||===================|");
+                                            System.out.println("|| Que nose épico !!");
+                                        }else if(nose == 1){
+                                            System.out.println("||==================================|");
+                                            System.out.println("|| Você caiu e geral riu de você !!");
+                                        }else if(nose == 2){
+                                            bicicleta1.bater();
+                                        }
+                                        System.out.println("|| OBS: "+pessoas+" pessoas estavam torcendo para você cair!!");
+
+                                        System.out.println("||======================================||");
+                                        System.out.println("|| Fazer outro nose? 1 - SIM // 2 - NÃO ||");
+                                        System.out.println("||======================================||");
+                                        System.out.printf("|| R: ");
+                                        escolha3 = scan.nextInt();
                                     }
-                                    System.out.println("|| OBS: "+pessoas+" pessoas estavam torcendo para você cair!!");
                                 break;
                                 case 2:
-                                    hangFive = rand.nextInt(3);
-                                    if(hangFive == 0){
-                                        System.out.println("||===================|");
-                                        System.out.println("|| Que hang-five incrível !!");
-                                    }else if(hangFive == 1){
-                                        System.out.println("||==================================|");
-                                        System.out.println("|| Você caiu e geral riu de você !!");
-                                    }else if(hangFive == 2){
-                                        bicicleta1.bater();
+                                    while(escolha3 == 1){
+                                        pessoas = rand.nextInt(30);
+                                        hangFive = rand.nextInt(3);
+                                        if(hangFive == 0){
+                                            System.out.println("||===================|");
+                                            System.out.println("|| Que hang-five incrível !!");
+                                        }else if(hangFive == 1){
+                                            System.out.println("||==================================|");
+                                            System.out.println("|| Você caiu e geral riu de você !!");
+                                        }else if(hangFive == 2){
+                                            bicicleta1.bater();
+                                        }
+                                        System.out.println("|| OBS: "+pessoas+" pessoas estavam torcendo para você cair!!");
+                                        
+                                        System.out.println("||===========================================||");
+                                        System.out.println("|| Fazer outro hang-five? 1 - SIM // 2 - NÃO ||");
+                                        System.out.println("||===========================================||");
+                                        System.out.printf("|| R: ");
+                                        escolha3 = scan.nextInt();
                                     }
-                                    System.out.println("|| OBS: "+pessoas+" pessoas estavam torcendo para você cair!!");
                                 break;
                                 case 3:
-                                    rl = rand.nextInt(3);
-                                    if(rl == 0){
-                                        System.out.println("||===================|");
-                                        System.out.println("|| Que rl irado !!");
-                                    }else if(rl == 1){
-                                        System.out.println("||==================================|");
-                                        System.out.println("|| Você caiu e geral riu de você !!");
-                                    }else if(rl == 2){
-                                        bicicleta1.bater();
+                                    while(escolha3 == 1){
+                                        pessoas = rand.nextInt(30);
+                                        rl = rand.nextInt(3);
+                                        if(rl == 0){
+                                            System.out.println("||===================|");
+                                            System.out.println("|| Que rl irado !!");
+                                        }else if(rl == 1){
+                                            System.out.println("||==================================|");
+                                            System.out.println("|| Você caiu e geral riu de você !!");
+                                        }else if(rl == 2){
+                                            bicicleta1.bater();
+                                        }
+                                        System.out.println("|| OBS: "+pessoas+" pessoas estavam torcendo para você cair!!");
+                                        
+                                        System.out.println("||====================================||");
+                                        System.out.println("|| Fazer outro rl? 1 - SIM // 2 - NÃO ||");
+                                        System.out.println("||====================================||");
+                                        System.out.printf("|| R: ");
+                                        escolha3 = scan.nextInt();
                                     }
-                                    System.out.println("|| OBS: "+pessoas+" pessoas estavam torcendo para você cair!!");
                                 break;
                             }
                             System.out.println("||===============================================||");
@@ -565,46 +592,6 @@ public class Main {
                             }
                         }
                     break;
-                }
-            break;
-            case 3:
-                while (escolha1 == 1){
-                    System.out.println("=====================================");
-                    System.out.println("Vamos montar as informações do avião!");
-                    System.out.println("Digite a velocidade máxima do avião:");
-                    velocidadeMax = scan.nextInt();
-                    if (velocidadeMax >= 850){
-                        System.out.println("Quanta potência!!");
-                    } else {
-                        System.out.println("Me parece lento!!");
-                    }
-                    System.out.println("==============================================");
-                    System.out.println("Informe o tipo de combustível que ele consome:");
-                    combustivel = scan.next();
-                    System.out.println("====================================================");
-                    System.out.println("Digite a quantidade máxima de combustível no tanque:");
-                    qtdCombustivel = scan.nextInt();
-                    System.out.println("Seu tanque está cheio agora!!");
-                    System.out.println("=============================");
-                    System.out.println("Informe a companhia do avião:");
-                    companhia = scan.next();
-                    System.out.println("===========================");
-                    System.out.println("Informe o tamanho do avião:");
-                    porte = scan.next();
-                    System.out.println("========================================");
-                    System.out.println("Digite a quantidade de pessoas no avião:");
-                    qtdPessoas = scan.nextInt();
-                    if (qtdPessoas >= 50){
-                        System.out.println("Quanta gente!!");
-                    } else {
-                        System.out.println("Está meio vazio!!");
-                    }
-                    Aviao aviao = new Aviao(velocidadeMax, combustivel, qtdCombustivel, companhia, porte, qtdPessoas);
-                    System.out.println("||============================================================================||");
-                    System.out.println("|| 1 - Reiniciar as informações || 2 - Entrar no Avião || 3 - Ver informações ||");
-                    System.out.println("||============================================================================||");
-                    System.out.println();
-                    escolha1 = scan.nextInt();
                 }
             break;
         }
