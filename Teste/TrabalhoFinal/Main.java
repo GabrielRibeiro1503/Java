@@ -6,6 +6,7 @@ public class Main {
 
         Scanner scan = new Scanner(System.in);
 
+        int escolhaInicio;
         String nick;
         Player jogador = null;
 
@@ -18,5 +19,9 @@ public class Main {
         System.out.println("História:");
         System.out.println("Você encalhou numa ilha e seu barco quebrou, mas por sorte nessa ilha há uma população, e na vila temos um mercante de peixes bla bla bla");
         System.out.println("Seu objetivo é pescar e vender seus peixes até que você junte dinheiro para comprar um novo barco para meter o pé");
+        System.out.println("O que ddeseja fazer?");
+        System.out.println("1 - pescar || 2 - ver loja || 3 - ver inventario || 4 - suas informações");
+
+        
     }
 }
