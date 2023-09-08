@@ -11,7 +11,7 @@ public class Main {
         Random rand = new Random();
 
         //Código
-        int escolhaInicio = 0, escolha1 = 1, escolha2, escolha3 = 1, escolha4 = 1, morrer, corrida;
+        int escolhaInicio = 0, escolha1 = 1, escolha2, escolha3 = 1, escolha4 = 1, morrer;
 
         //Transporte
         int velocidadeMax;
@@ -31,8 +31,6 @@ public class Main {
         Bicicleta bicicleta2 = null;
 
         //Escolher o veículo
-        // ======================= A ideia era fazer 4 veículos mas não deu tempo ;-;
-
         while(escolhaInicio != 1 && escolhaInicio != 2 && escolhaInicio != 3 && escolhaInicio != 4){
             System.out.println("||============================================||");
             System.out.println("||  !! Bem Vindo ao Role-Play de veículos !!  ||");
