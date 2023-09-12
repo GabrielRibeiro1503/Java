@@ -11,8 +11,7 @@ public class Bicicleta extends Transporte {
     private String nome;
     private int corrida;
 
-    public Bicicleta(int velocidadeMax, String combustivel, float qtdCombustivel, int tamAro, String amortecedor,
-            int qtdMarcha, String nome) {
+    public Bicicleta(int velocidadeMax, String combustivel, float qtdCombustivel, int tamAro, String amortecedor, int qtdMarcha, String nome) {
         super(velocidadeMax, combustivel, qtdCombustivel);
         this.tamAro = tamAro;
         this.amortecedor = amortecedor;

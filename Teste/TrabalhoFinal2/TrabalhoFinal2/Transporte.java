@@ -1,6 +1,6 @@
 package TrabalhoFinal2;
 
-public abstract class Transporte implements Interface {
+public class Transporte implements Interface {
 
     private int velocidadeMax;
     private String combustivel;
