@@ -30,9 +30,6 @@ public class Atividade3{
         horaFinal = Integer.parseInt(partes[0].trim());
         minutoFinal = Integer.parseInt(partes[1].trim());
         segundoFinal = Integer.parseInt(partes[2].trim());
-
-        
-
     }
 }
 
