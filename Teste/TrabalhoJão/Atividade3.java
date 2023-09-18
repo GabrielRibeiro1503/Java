@@ -23,13 +23,37 @@ public class Atividade3{
         System.out.print("Dia ");
         diaFinal = scanner.nextInt();
         System.out.print("Informe o horário (hh : mm : ss): ");
-        horarioFinal = scanner.nextLine();
+        horarioFinal = scanner.next();
 
         partes = horarioFinal.split(":");
 
         horaFinal = Integer.parseInt(partes[0].trim());
         minutoFinal = Integer.parseInt(partes[1].trim());
         segundoFinal = Integer.parseInt(partes[2].trim());
+
+        W = diaFinal - diaInicio;
+        X = horaFinal - horaInicio;
+        Y = minutoFinal - minutoInicio;
+        Z = segundoFinal - segundoInicio;
+
+        if (Z < 0) {
+            Y--;
+            Z += 60;
+        }
+        if (Y < 0) {
+            X--;
+            Y += 60;
+        }
+        if (X < 0) {
+            W--;
+            X += 24;
+        }
+
+        System.out.println(W+"dia(s)");
+        System.out.println(X+"hora(s)");
+        System.out.println(Y+"minuto(s)");
+        System.out.println(Z+"segundo(s)");
+
     }
 }
 
