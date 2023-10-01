@@ -5,31 +5,39 @@ public class Atividade3{
 
         Scanner scanner = new Scanner(System.in);
 
-        int W, X, Y, Z, diaInicio, horaInicio, minutoInicio, segundoInicio, diaFinal, horaFinal, minutoFinal, segundoFinal;
+        int W, X, Y, Z, diaInicio, horaInicio = 0, minutoInicio = 0, segundoInicio = 0, diaFinal, horaFinal = 0, minutoFinal = 0, segundoFinal = 0;
         String horarioInicio, horarioFinal;
         String[] partes;
 
         System.out.print("Dia ");
         diaInicio = scanner.nextInt();
-        System.out.print("Informe o horário (hh : mm : ss): ");
+        System.out.print("");
         horarioInicio = scanner.next();
 
         partes = horarioInicio.split(":");
 
-        horaInicio = Integer.parseInt(partes[0].trim());
-        minutoInicio = Integer.parseInt(partes[1].trim());
-        segundoInicio = Integer.parseInt(partes[2].trim());
+        if (partes.length == 3) {
+            horaInicio = Integer.parseInt(partes[0].trim());
+            minutoInicio = Integer.parseInt(partes[1].trim());
+            segundoInicio = Integer.parseInt(partes[2].trim());
+        } else {
+            System.out.println("Formato de hora incorreto.");
+        }
 
         System.out.print("Dia ");
         diaFinal = scanner.nextInt();
-        System.out.print("Informe o horário (hh : mm : ss): ");
+        System.out.print("");
         horarioFinal = scanner.next();
 
         partes = horarioFinal.split(":");
 
-        horaFinal = Integer.parseInt(partes[0].trim());
-        minutoFinal = Integer.parseInt(partes[1].trim());
-        segundoFinal = Integer.parseInt(partes[2].trim());
+        if (partes.length == 3) {
+            horaFinal = Integer.parseInt(partes[0].trim());
+            minutoFinal = Integer.parseInt(partes[1].trim());
+            segundoFinal = Integer.parseInt(partes[2].trim());
+        } else {
+            System.out.println("Formato de hora incorreto.");
+        }
 
         W = diaFinal - diaInicio;
         X = horaFinal - horaInicio;
@@ -56,4 +64,3 @@ public class Atividade3{
 
     }
 }
-
