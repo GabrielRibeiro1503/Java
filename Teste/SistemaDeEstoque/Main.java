@@ -14,47 +14,41 @@ public class Main {
 
         Scanner scan = new Scanner(System.in);
 
-        Estoque estoque = new Estoque(null, 0, null);
+        Estoque estoque = new Estoque(null, 0);
         int escolhaInicio = 1;
 
-        while(escolhaInicio >= 1 && escolhaInicio <= 5){
+        while(escolhaInicio != 5){
+            System.out.println("");
             System.out.println("Sistema de estoque");
             System.out.println("O que deseja fazer?");
-            System.out.println("1 - Cadastar novo produto");
-            System.out.println("2 - Registrar entrada");
-            System.out.println("3 - Registrar saída");
-            System.out.println("4 - Verificar saldo");
-            System.out.println("5 - Excluir produto");
-            System.out.println("6 - Sair");
+            System.out.println("1 - Cadastar Produto");
+            System.out.println("2 - Registrar Movimento");
+            System.out.println("3 - Verificar Produto");
+            System.out.println("4 - Excluir Produto");
+            System.out.println("5 - ");
             escolhaInicio = scan.nextInt();
 
             switch(escolhaInicio){
                 case 1:
                     estoque.cadastrar();
                 break;
-
                 case 2:
-                    estoque.add();
+                    estoque.registrar();
                 break;
-
                 case 3:
-                    estoque.retirar();
-                break;
-
-                case 4:
                     estoque.verificar();
                 break;
-
+                case 4:
+                    estoque.excluir();
+                break;
                 case 5:
-
+                    System.exit(0);
+                break;
+                default:
+                    System.out.println("Número inválido!");
                 break;
             }
         }
-
-        if(escolhaInicio != 6){
-            System.out.println("Número inválido!");
-        }
-    
         scan.close();
     }
 }
