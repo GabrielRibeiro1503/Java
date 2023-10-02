@@ -54,7 +54,7 @@ public class Main {
         if(escolhaInicio != 6){
             System.out.println("Número inválido!");
         }
-
+    
         scan.close();
     }
 }

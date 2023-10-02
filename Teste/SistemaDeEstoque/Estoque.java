@@ -56,7 +56,7 @@ public class Estoque {
         System.out.println("Digite o nome do produto: ");
         nome = scan.next();
 
-        estoque = new Estoque(nome, ++id, estado = true);
+        estoque = new Estoque(nome, ++id, true);
         itens.add(estoque);
     }
 
@@ -134,9 +134,11 @@ public class Estoque {
         respId = scan.nextInt();
         
         for(Estoque estoque : itens){
-            if(respId == estoque.getId()){
+            if(respId == estoque.getId() && estoque.getEstado() == true){
                 estoque.setEstado(false);
                 System.out.println("Seu produto foi desativado");
+            }else if(estoque.getEstado() == false){
+                System.out.println("O item já foi excluído");
             }
         }
     }
