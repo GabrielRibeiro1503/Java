@@ -1,13 +1,5 @@
 import java.util.Scanner;
 
-
-// Juntar Desativar e Ativar em uma só opção e substituir por Exluir.
-// Juntar Entrada e Saída em uma só opção.
-// Corrigir erros de input no Estoque.
-// Adicionar estética e padronização no output.
-// Modelar sistema de Estado de Funcionamento (on || off) para o item.
-
-
 public class Main {
     
     public static void main(String[] args){
