@@ -58,105 +58,116 @@ public class Estoque {
 
     public void info(){
         for(Estoque estoque : itens){
-            System.out.println("Nome: "+estoque.getNome());
-            System.out.println("ID: "+estoque.getId());
-            System.out.println("Quantidade: "+estoque.getQtd());
-            System.out.println("Estado: "+ (estoque.getEstado() ? "Ativo" : "Desativo"));
+            System.out.println("||==================================================||");
+            System.out.println("|| Nome: "+estoque.getNome());
+            System.out.println("|| ID: "+estoque.getId());
+            System.out.println("|| Quantidade: "+estoque.getQtd());
+            System.out.println("|| Estado: "+ (estoque.getEstado() ? "Ativo" : "Desativo"));
         }
-    }
-
-    // 1.2 - Função para localizar o ID do produto
-
-    public int verificId(int id){
-        for(Estoque estoque : itens){
-            if(id == estoque.getId()){
-                index = itens.indexOf(estoque);
-                break;
-            }
-        }
-        return ++index;
     }
 
     // 2 - Funcionalidades do sistema 
     // 2.1 - Cadastrar produto
 
     public void cadastrar(){
-        System.out.println("Digite o nome do produto: ");
+        System.out.println("||==================================================||");
+        System.out.println("||                 -- Cadastrar --                  ||");
+        System.out.println("||=======================++=========================||");
+        System.out.print("|| Digite o nome do produto: ");
         nome = scan.next();
-        respNome = 0;
 
+        respNome = 0;
         for(Estoque estoque : itens){
             if(nome.equals(estoque.getNome())){
-                System.out.println("Produto ja cadastrado!");
-                System.out.println("Seu ID é: "+estoque.getId());
+                System.out.println("|| Produto ja cadastrado!");
+                System.out.println("|| Seu ID é: "+estoque.getId());
                 respNome = 1;
                 break;
             }
         }
-
         if(respNome == 0){
             estoque = new Estoque(nome, ++id);
             estoque.setEstado(true);
             itens.add(estoque);
-            System.out.println("Produto cadastrado!");
+            System.out.println("|| Produto cadastrado!");
         }
     }
 
     // 2.2 - Resgistrar entrada e saída de itens do produto
 
     public void registrar(){
-        System.out.println("1 - Registrar entrada");
-        System.out.println("2 - Registrar saída");
+        System.out.println("||==================================================||");
+        System.out.println("||                 -- Registrar --                  ||");
+        System.out.println("||=======================++=========================||");
+        System.out.println("|| 1 - Registrar entrada ||   2 - Registrar saída   ||");
+        System.out.println("||=======================++=========================||");
+        System.out.print("||> ");
         respRegistrar = scan.nextInt();
 
         switch(respRegistrar){
             case 1:
-                while(true){
-                    System.out.println("Digite o ID do produto que você deseja adicionar quantidade: ");
-                    respId = scan.nextInt();
-                    
-                    if(this.verificId(respId) != 0 && estoque.getEstado() == true){
-                        System.out.println(index);
-                        System.out.println("Esse ID equivale ao seguinte produto:");
-                        System.out.println("Nome: "+estoque.getNome());
-                        System.out.println("Quantidade: "+estoque.getQtd());
+                System.out.println("||==================================================||");
+                System.out.print("|| Digite o ID do produto para adicionar itens: ");
+                respId = scan.nextInt();
+                
+                acharId = 0;
+                for(Estoque estoque : itens){
+                    if(respId == estoque.getId() && estoque.getEstado() == true){
+                        System.out.println("|| Esse ID equivale ao seguinte produto:");
+                        System.out.println("|| Nome: "+estoque.getNome());
+                        System.out.println("|| Quantidade: "+estoque.getQtd());
         
-                        System.out.println("Digite a quantidade que você deseja adicionar: ");
+                        System.out.print("|| Digite a quantidade para adicionar: ");
                         respQtd = scan.nextInt();
                         estoque.setQtd(estoque.getQtd()+respQtd);
-                        System.out.println("Adicionado!");
+                        System.out.println("|| Adicionado!");
                         break;
-                    }else if(this.verificId(respId) != 0 && estoque.getEstado() == false){
-                        System.out.println("Esse produto está desativado");
-                        System.out.println("Ative primeiro antes de modificar");
+                    }else if(respId == estoque.getId() && estoque.getEstado() == false){
+                        System.out.println("|| Esse produto está desativado!");
+                        System.out.println("|| Ative primeiro antes de modificar!");
+                        break;
                     }else{
-                        System.out.println("Esse ID não existe!");
+                        acharId++;
+                        continue;
                     }
+                }
+                if(acharId == itens.size()){
+                    System.out.println("|| Esse ID não existe!");
                 }
             break;
             case 2:
-                System.out.println("Digite o ID do produto que você deseja retirar quantidade: ");
+                System.out.println("||==================================================||");
+                System.out.print("|| Digite o ID do produto para retirar itens: ");
                 respId = scan.nextInt();
 
-                if(this.verificId(respId) == 1 && estoque.getEstado() == true){
-                    System.out.println("Esse ID equivale ao seguinte produto:");
-                    System.out.println("Nome: "+estoque.getNome());
-                    System.out.println("Quantidade: "+estoque.getQtd());
+                acharId = 0;
+                for(Estoque estoque : itens){
+                    if(respId == estoque.getId() && estoque.getEstado() == true){
+                        System.out.println("|| Esse ID equivale ao seguinte produto:");
+                        System.out.println("|| Nome: "+estoque.getNome());
+                        System.out.println("|| Quantidade: "+estoque.getQtd());
 
-                    System.out.println("Digite a quantidade que você deseja retirar: ");
-                    respQtd = scan.nextInt();
-                    if(estoque.getQtd() < respQtd){
-                        System.out.println("Não há saldo suficiente para retirar, irá faltar "+(respQtd - estoque.getQtd())+" itens!");
-                    }else{
-                        estoque.setQtd(estoque.getQtd()-respQtd);
-                        System.out.println("Retirado!");
+                        System.out.print("|| Digite a quantidade para retirar: ");
+                        respQtd = scan.nextInt();
+                        if(estoque.getQtd() < respQtd){
+                            System.out.println("|| Não há saldo suficiente para retirar!");
+                            System.out.println("|| Irá faltar "+(respQtd - estoque.getQtd())+" itens!");
+                        }else{
+                            estoque.setQtd(estoque.getQtd()-respQtd);
+                            System.out.println("|| Retirado!");
+                            break;
+                        }
+                    }else if(respId == estoque.getId() && estoque.getEstado() == false){
+                        System.out.println("|| Esse produto está desativado!");
+                        System.out.println("|| Ative primeiro antes de modificar!");
                         break;
+                    }else{
+                        acharId++;
+                        continue;
                     }
-                }else if(this.verificId(respId) == 1 && estoque.getEstado() == false){
-                    System.out.println("Esse produto está desativado");
-                    System.out.println("Ative primeiro antes de modificar");
-                }else{
-                    System.out.println("Esse ID não existe!");
+                }
+                if(acharId == itens.size()){
+                    System.out.println("|| Esse ID não existe!");
                 }
             break;
         }
@@ -165,27 +176,35 @@ public class Estoque {
     // 2.3 - Verificar lista de produto ou um produto específico
 
     public void verificar(){
-        System.out.println("O que deseja verificar?");
-        System.out.println("1 - Verificar lista de itens");
-        System.out.println("2 - Verificar item específico");
+        System.out.println("||==================================================||");
+        System.out.println("||                 -- Verificar --                  ||");
+        System.out.println("||=======================++=========================||");
+        System.out.println("||  1 - Verificar lista  ||  2 - Verificar produto  ||");
+        System.out.println("||=======================++=========================||");
+        System.out.print("||> ");
         respInfo = scan.nextInt();
 
         switch(respInfo){
             case 1:
                 this.info();        
             break;
-            
             case 2:
-                while(true){
-                    System.out.println("Digite o ID do produto que você deseja verificar: ");
-                    respId = scan.nextInt();
-        
-                    if(this.verificId(respId) == 1){
+                System.out.println("||==================================================||");
+                System.out.print("|| Digite o ID do produto para verificar: ");
+                respId = scan.nextInt();
+    
+                acharId = 0;
+                for(Estoque estoque : itens){
+                    if(respId == estoque.getId()){
                         this.info();
-                        break;
+                    break;
                     }else{
-                        System.out.println("Esse ID não existe!");
+                        acharId++;
+                        continue;
                     }
+                }
+                if(acharId == itens.size()){
+                    System.out.println("|| Esse ID não existe!");
                 }
             break;
         }
@@ -194,44 +213,59 @@ public class Estoque {
     // 2.4 - Desativa e ativa um produto
 
     public void excluir(){
-        System.out.println("O que deseja fazer?");
-        System.out.println("1 - Desativar produto");
-        System.out.println("2 - Ativar produto");
+        System.out.println("||==================================================||");
+        System.out.println("||                  -- Excluir --                   ||");
+        System.out.println("||=======================++=========================||");
+        System.out.println("|| 1 - Desativar produto ||   2 - Ativar produto    ||");
+        System.out.println("||=======================++=========================||");
+        System.out.print("||> ");
         respRemv = scan.nextInt();
 
         switch(respRemv){
             case 1:
-                while(true){
-                    System.out.println("Digite o ID do produto que você deseja desativar: ");
-                    respId = scan.nextInt();
+                System.out.println("||==================================================||");
+                System.out.print("|| Digite o ID do produto para desativar: ");
+                respId = scan.nextInt();
 
-                    if(this.verificId(respId) == 1 && estoque.getEstado() == true){
+                acharId = 0;
+                for(Estoque estoque : itens){
+                    if(respId == estoque.getId() && estoque.getEstado() == true){
                         estoque.setEstado(false);
-                        System.out.println("Seu produto foi desativado");
+                        System.out.println("|| Seu produto foi desativado!");
                         break;
-                    }else if(this.verificId(respId) == 1 && estoque.getEstado() == false){
-                        System.out.println("O item já está desativado");
+                    }else if(respId == estoque.getId() && estoque.getEstado() == false){
+                        System.out.println("|| O produto já está desativado!");
                         break;
-                    }else if(this.verificId(respId) == 0){
-                        System.out.println("Esse ID não existe!");
+                    }else{
+                        acharId++;
+                        continue;
                     }
+                }
+                if(acharId == itens.size()){
+                    System.out.println("|| Esse ID não existe!");
                 }
             break;
             case 2:
-                while(true){
-                    System.out.println("Digite o ID do produto que você deseja ativar: ");
-                    respId = scan.nextInt();
+                System.out.println("||==================================================||");
+                System.out.print("|| Digite o ID do produto para ativar: ");
+                respId = scan.nextInt();
 
-                    if(this.verificId(respId) == 1 && estoque.getEstado() == false){
+                acharId = 0;
+                for(Estoque estoque : itens){
+                    if(respId == estoque.getId() && estoque.getEstado() == false){
                         estoque.setEstado(true);
-                        System.out.println("Seu produto foi ativado");
+                        System.out.println("|| Seu produto foi ativado!");
                         break;
-                    }else if(this.verificId(respId) == 1 && estoque.getEstado() == true){
-                        System.out.println("O item já está ativado");
+                    }else if(respId == estoque.getId() && estoque.getEstado() == true){
+                        System.out.println("|| O produto já está ativado!");
                         break;
-                    }else if(this.verificId(respId) == 0){
-                        System.out.println("Esse ID não existe!");
+                    }else{
+                        acharId++;
+                        continue;
                     }
+                }
+                if(acharId == itens.size()){
+                    System.out.println("|| Esse ID não existe!");
                 }
             break;
         }

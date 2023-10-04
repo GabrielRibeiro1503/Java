@@ -18,14 +18,16 @@ public class Main {
         int escolhaInicio = 1;
 
         while(escolhaInicio != 5){
-            System.out.println("");
-            System.out.println("Sistema de estoque");
-            System.out.println("O que deseja fazer?");
-            System.out.println("1 - Cadastar Produto");
-            System.out.println("2 - Registrar Movimento");
-            System.out.println("3 - Verificar Produto");
-            System.out.println("4 - Excluir Produto");
-            System.out.println("5 - Sair");
+            System.out.println("||==================================================||");
+            System.out.println("||             -- Sistema de Estoque --             ||");
+            System.out.println("||=======================++=========================||");
+            System.out.println("|| 1 - Cadastar Produto  || 2 - Registrar Movimento ||");
+            System.out.println("||=======================++=========================||");
+            System.out.println("|| 3 - Verificar Produto || 4 - Excluir Produto     ||");
+            System.out.println("||=======================++=========================||");
+            System.out.println("|| 5 - Sair              ||                         ||");
+            System.out.println("||=======================++=========================||");
+            System.out.print("||> ");
             escolhaInicio = scan.nextInt();
 
             switch(escolhaInicio){
@@ -45,7 +47,8 @@ public class Main {
                     System.exit(0);
                 break;
                 default:
-                    System.out.println("Número inválido!");
+                    System.out.println("||==================================================||");
+                    System.out.println("|| Número inválido!");
                 break;
             }
         }
