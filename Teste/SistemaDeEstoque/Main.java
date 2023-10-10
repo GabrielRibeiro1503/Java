@@ -19,11 +19,7 @@ public class Main {
             System.out.println("||=======================++=========================||");
             System.out.println("|| 5 - Sair              ||                         ||");
             System.out.println("||=======================++=========================||");
-<<<<<<< HEAD
             System.out.print("|} ");
-=======
-            System.out.print("||> ");
->>>>>>> 7fa700ea74150d67571914565ab9f6dc87d8497c
             escolhaInicio = scan.nextInt();
 
             switch(escolhaInicio){

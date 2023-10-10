@@ -1,8 +1,17 @@
+import java.util.Scanner;
+import java.util.ArrayList;
+
 public class Player {
     
     private String nome;
     private int nvlMochila;
     private int nvlVara;
+
+    int escolha1;
+
+    ArrayList<Peixe> mochila = new ArrayList<>();
+    Scanner scan = new Scanner(System.in);
+    Player player = null;
 
     public Player(String nome){
         this.nome = nome;
@@ -32,6 +41,38 @@ public class Player {
 
     public void setNvlVara(int nvlVara){
         this.nvlVara = nvlVara;
+    }
+
+    public void mar(){
+        System.out.println("navegando");
+        System.out.println("O que você deseja fazer?");
+        System.out.println("1 - Pescar | 2 - Ver mochila | 3 - Ver informações | 4 - Voltar para a ilha");
+        escolha1 = scan.nextInt();
+
+        switch(escolha1){
+            case 1:
+                //pescar
+            break;
+            case 2:
+                player.mochila();
+            break;
+            case 3:
+                player.info();
+            break;
+            case 4:
+                //voltar
+            break; 
+        }
+    }
+
+    public void loja(){
+
+    }
+
+    public void mochila(){
+        for(Peixe peixe : mochila){
+            System.out.println();
+        }
     }
 
     public void info(){
