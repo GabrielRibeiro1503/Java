@@ -46,7 +46,7 @@ public class Player {
 
     public void mar(){
         System.out.println("navegando");
-
+        
         while(escolha1 >= 1 && escolha1 <= 4){
             System.out.println("O que você deseja fazer?");
             System.out.println("1 - Pescar | 2 - Ver mochila | 3 - Ver informações | 4 - Voltar para a ilha");
@@ -54,8 +54,10 @@ public class Player {
        
             switch(escolha1){
                 case 1:
-                    mochila.add(peixe = new Peixe());
+                    peixe = new Peixe();
+                    mochila.add(peixe);
                     System.out.println("Add");
+                    peixe.sortNome();
                 break;
                 case 2:
                     this.mochila();
