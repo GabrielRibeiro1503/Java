@@ -7,11 +7,12 @@ public class Player {
     private int nvlMochila;
     private int nvlVara;
 
-    int escolha1;
+    int escolha1 = 1;
 
     ArrayList<Peixe> mochila = new ArrayList<>();
     Scanner scan = new Scanner(System.in);
     Player player = null;
+    Peixe peixe = null;
 
     public Player(String nome){
         this.nome = nome;
@@ -45,23 +46,26 @@ public class Player {
 
     public void mar(){
         System.out.println("navegando");
-        System.out.println("O que você deseja fazer?");
-        System.out.println("1 - Pescar | 2 - Ver mochila | 3 - Ver informações | 4 - Voltar para a ilha");
-        escolha1 = scan.nextInt();
 
-        switch(escolha1){
-            case 1:
-                //pescar
-            break;
-            case 2:
-                player.mochila();
-            break;
-            case 3:
-                player.info();
-            break;
-            case 4:
-                //voltar
-            break; 
+        while(escolha1 >= 1 && escolha1 <= 4){
+            System.out.println("O que você deseja fazer?");
+            System.out.println("1 - Pescar | 2 - Ver mochila | 3 - Ver informações | 4 - Voltar para a ilha");
+            escolha1 = scan.nextInt();
+       
+            switch(escolha1){
+                case 1:
+                    mochila.add(peixe = new Peixe());
+                    System.out.println("Add");
+                break;
+                case 2:
+                    this.mochila();
+                break;
+                case 3:
+                    player.info();
+                break;
+                case 4:
+                    return;
+            }
         }
     }
 
@@ -71,7 +75,7 @@ public class Player {
 
     public void mochila(){
         for(Peixe peixe : mochila){
-            System.out.println();
+            peixe.info();
         }
     }
 
