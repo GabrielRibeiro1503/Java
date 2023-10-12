@@ -3,16 +3,19 @@ import java.util.Random;
 public class Peixe {
     
     private String nome;
+    private String raridade;
     private int tam;
+    private int preco;
     
     Random rand = new Random();
-    String[] listaPeixes = new String[6];
-    int randPeixe;
-    String nomePeixe;
+    int randPeixe, tamPeixe, precoPeixe = 50;
+    String nomePeixe, raridadePeixe;
 
     public Peixe(){
         this.nome = this.sortNome();
-        this.tam = 5;
+        this.raridade = this.raridade();
+        this.tam = this.sortTam();
+        this.preco = this.preco();
     }
 
     public String getNome(){
@@ -23,6 +26,14 @@ public class Peixe {
         this.nome = nome;
     }
 
+    public String getRaridade() {
+        return raridade;
+    }
+
+    public void setRaridade(String raridade) {
+        this.raridade = raridade;
+    }
+
     public int getTam(){
         return this.tam;
     }
@@ -31,51 +42,117 @@ public class Peixe {
         this.tam = tam;
     }
 
+    public int getPreco() {
+        return preco;
+    }
+
+    public void setPreco(int preco) {
+        this.preco = preco;
+    }
+
     public void info(){
         System.out.println("Nome: "+this.nome);
+        System.out.println("Tamanho: "+this.tam);
+        System.out.println("Raridade: "+this.raridade);
+        System.out.println("Preço: "+this.preco);
+        System.out.println();
     }
 
     public String sortNome(){
-        listaPeixes[0] = "Salmão";
-        listaPeixes[1] = "Baiacu";
-        listaPeixes[2] = "Bacalhau";
-        listaPeixes[3] = "Atum";
-        listaPeixes[4] = "Linguado";
-        listaPeixes[5] = "Sardinha";
+        randPeixe = rand.nextInt(22);
 
-        randPeixe = rand.nextInt(listaPeixes.length);
-
-        for(int i = 0; i <= listaPeixes.length; i++){
-            if(i == randPeixe){
-                nomePeixe = listaPeixes[i];
-                break;
-            }
+        if(randPeixe <= 21 && randPeixe >=17){
+            nomePeixe = "Sardinha";
+        } else if(randPeixe <= 15 && randPeixe >=12){
+            nomePeixe = "Salmão";
+        } else if(randPeixe <= 11 && randPeixe >= 7){
+            nomePeixe = "Baiacu";
+        } else if(randPeixe <= 6 && randPeixe >= 4){
+            nomePeixe = "Bacalhau";
+        } else if(randPeixe <= 3 && randPeixe >= 1){
+            nomePeixe = "Linguado";
+        } else if(randPeixe == 0){
+            nomePeixe = "Atum";
         }
 
         return nomePeixe;
     }
 
-    public void sortTam(){
-        switch(getNome()){
+    public int sortTam(){
+        switch(this.nome){
+            case "Sardinha":
+                tamPeixe = (rand.nextInt(21)) + 15;
+            break;
             case "Salmão":
-                //60 a 90
+                tamPeixe = (rand.nextInt(31)) + 60;
             break;
             case "Baiacu":
-                //20 a 40
+                tamPeixe = (rand.nextInt(21)) + 20;
             break;
             case "Bacalhau":
-                //50 a 100
-            break;
-            case "Atum":
-                //150 a 200
+                tamPeixe = (rand.nextInt(51)) + 50;
             break;
             case "Linguado":
-                //30 a 60
+                tamPeixe = (rand.nextInt(31)) + 30;
             break;
-            case "Sardinha":
-                //15 a 25
+            case "Atum":
+                tamPeixe = (rand.nextInt(51)) + 150;
             break;
         }
+
+        return tamPeixe;
+    }
+
+    private String raridade(){
+        switch(this.nome){
+            case "Sardinha": 
+            case "Salmão": 
+            case "Baiacu": 
+                raridadePeixe = "Comum";
+            break;
+            case "Bacalhau": 
+            case "Linguado": 
+                raridadePeixe = "Raro";
+            break;
+            case "Atum": 
+                raridadePeixe = "Épico";
+            break;
+        }
+        
+        return raridadePeixe;
+    }
+
+    private int preco(){
+        switch(this.nome){
+            case "Sardinha": 
+                precoPeixe += this.tam - 150;
+            break;
+            case "Salmão": 
+                precoPeixe += this.tam - 60;
+            break;
+            case "Baiacu": 
+                precoPeixe += this.tam - 50;
+            break;
+            case "Bacalhau": 
+                precoPeixe += this.tam - 20;
+            break;
+            case "Linguado": 
+                precoPeixe += this.tam - 30;
+            break;
+            case "Atum": 
+                precoPeixe += this.tam - 15;
+            break;
+        }
+
+        if(this.raridade.equals("Comum")){
+            precoPeixe += 10;
+        } else if (this.raridade.equals("Raro")){
+            precoPeixe += 40;
+        } else if (this.raridade.equals("Épico")){
+            precoPeixe += 60;
+        }
+
+        return precoPeixe;
     }
 }    
         

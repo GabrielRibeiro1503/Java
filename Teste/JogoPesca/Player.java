@@ -7,7 +7,7 @@ public class Player {
     private int nvlMochila;
     private int nvlVara;
 
-    int escolha1 = 1;
+    int escolhaMar = 1, limiteMochila = 4, escolhaLoja;
 
     ArrayList<Peixe> mochila = new ArrayList<>();
     Scanner scan = new Scanner(System.in);
@@ -46,18 +46,20 @@ public class Player {
 
     public void mar(){
         System.out.println("navegando");
-        
-        while(escolha1 >= 1 && escolha1 <= 4){
+
+        while(escolhaMar >= 1 && escolhaMar <= 4){
             System.out.println("O que você deseja fazer?");
             System.out.println("1 - Pescar | 2 - Ver mochila | 3 - Ver informações | 4 - Voltar para a ilha");
-            escolha1 = scan.nextInt();
+            escolhaMar = scan.nextInt();
        
-            switch(escolha1){
+            switch(escolhaMar){
                 case 1:
-                    peixe = new Peixe();
-                    mochila.add(peixe);
-                    System.out.println("Add");
-                    peixe.sortNome();
+                    if(mochila.size() <= limiteMochila){
+                        mochila.add(peixe = new Peixe());
+                        System.out.println("Add");
+                    } else {
+                        System.out.println("Mochila cheia!");
+                    }
                 break;
                 case 2:
                     this.mochila();
@@ -72,7 +74,23 @@ public class Player {
     }
 
     public void loja(){
+        System.out.println("Bem vindo a loja!");
+        System.out.println("1 - Melhorar vara | 2 - Melhorar mochila | 3 - Comprar barco para zarpar | 4 - Sair");
+        escolhaLoja = scan.nextInt();
 
+        switch(escolhaLoja){
+            case 1:
+                System.out.println("Comprar melhoria da vara por 700 moedas?");
+            break;
+            case 2:
+                System.out.println("Comprar melhoria da mochila por 500 moedas?");
+            break;
+            case 3:
+               System.out.println("Comprar barco por 5000 moedas?");
+            break;
+            case 4:
+                return;
+        }
     }
 
     public void mochila(){
