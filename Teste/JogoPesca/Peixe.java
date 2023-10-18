@@ -14,9 +14,9 @@ public class Peixe {
 
     public Peixe(int preco){
         this.nome = this.sortNome();
-        this.raridade = this.raridade();
-        this.tam = this.sortTam();
-        this.preco = preco + this.preco();
+        this.raridade = this.raridade(getNome());
+        this.tam = this.sortTam(getNome());
+        this.preco = preco + this.preco(getNome());
     }
 
     public String getNome(){
@@ -60,7 +60,8 @@ public class Peixe {
     }
 
     private String sortNome(){
-        randPeixe = rand.nextInt(22);
+        randPeixe = rand.nextInt(21);
+        nomePeixe = null;
 
         if(randPeixe <= 21 && randPeixe >=17){
             nomePeixe = "Sardinha";
@@ -79,8 +80,8 @@ public class Peixe {
         return nomePeixe;
     }
 
-    private int sortTam(){
-        switch(this.nome){
+    private int sortTam(String nome){
+        switch(nome){
             case "Sardinha":
                 tamPeixe = (rand.nextInt(21)) + 15;
             break;
@@ -104,14 +105,22 @@ public class Peixe {
         return tamPeixe;
     }
 
-    private String raridade(){
-        switch(this.nome){
-            case "Sardinha": 
-            case "Salmão": 
+    private String raridade(String nome){
+        raridadePeixe = null;
+
+        switch(nome){
+            case "Sardinha":
+                raridadePeixe = "Comum";
+            break;
+            case "Salmão":
+                raridadePeixe = "Comum";
+            break;
             case "Baiacu": 
                 raridadePeixe = "Comum";
             break;
-            case "Bacalhau": 
+            case "Bacalhau":
+                raridadePeixe = "Raro";
+            break;
             case "Linguado": 
                 raridadePeixe = "Raro";
             break;
@@ -123,8 +132,8 @@ public class Peixe {
         return raridadePeixe;
     }
 
-    private int preco(){
-        switch(this.nome){
+    private int preco(String nome){
+        switch(nome){
             case "Sardinha": 
                 precoPeixe += this.tam - 15;
             break;

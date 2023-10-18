@@ -20,7 +20,7 @@ public class Player {
         this.nvlMochila = 1;
         this.nvlVara = 1;
         this.carteira = 0;
-        this.moneyVara = 50;
+        this.moneyVara = 40;
     }
 
     public String getNome(){
@@ -99,10 +99,35 @@ public class Player {
 
         switch(escolhaLoja){
             case 1:
+                System.out.println("O nivel atual da sua vara de pesca é de: "+getNvlVara());
+                System.out.println("O dinheiro obtido pela vara de pesca de: "+getMoneyVara());
                 System.out.println("Comprar melhoria da vara por 700 moedas?");
+                System.out.println("1 - Sim || 2 - Não ");
+                escolhaLoja2 = scan.nextInt();
+
+                switch(escolhaLoja2){
+                    case 1:
+                        setNvlVara(2);
+                        setMoneyVara(80);
+                        System.out.println("Vara de pesca melhorada!");
+                    break;
+                }
             break;
             case 2:
+                System.out.println("O nivel atual da sua mochila é de: "+getNvlMochila());
+                System.out.println("O dinheiro obtido pela mochila é de: "+limiteMochila);
                 System.out.println("Comprar melhoria da mochila por 500 moedas?");
+                System.out.println("1 - Sim || 2 - Não ");
+                escolhaLoja2 = scan.nextInt();
+
+                switch(escolhaLoja2){
+                    case 1:
+                        setCarteira(getCarteira() - 500);
+                        setNvlVara(nvlVara);
+                        limiteMochila = 9;
+                        System.out.println("mochila melhorada!");
+                    break;
+                }
             break;
             case 3:
                System.out.println("Comprar barco por 5000 moedas?");
