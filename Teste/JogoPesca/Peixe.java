@@ -8,14 +8,15 @@ public class Peixe {
     private int preco;
     
     Random rand = new Random();
-    int randPeixe, tamPeixe, precoPeixe = 50;
+    int randPeixe, tamPeixe, precoPeixe;
     String nomePeixe, raridadePeixe;
+    
 
-    public Peixe(){
+    public Peixe(int preco){
         this.nome = this.sortNome();
         this.raridade = this.raridade();
         this.tam = this.sortTam();
-        this.preco = this.preco();
+        this.preco = preco + this.preco();
     }
 
     public String getNome(){
@@ -58,7 +59,7 @@ public class Peixe {
         System.out.println();
     }
 
-    public String sortNome(){
+    private String sortNome(){
         randPeixe = rand.nextInt(22);
 
         if(randPeixe <= 21 && randPeixe >=17){
@@ -78,7 +79,7 @@ public class Peixe {
         return nomePeixe;
     }
 
-    public int sortTam(){
+    private int sortTam(){
         switch(this.nome){
             case "Sardinha":
                 tamPeixe = (rand.nextInt(21)) + 15;
@@ -125,22 +126,22 @@ public class Peixe {
     private int preco(){
         switch(this.nome){
             case "Sardinha": 
-                precoPeixe += this.tam - 150;
+                precoPeixe += this.tam - 15;
             break;
             case "Salmão": 
                 precoPeixe += this.tam - 60;
             break;
             case "Baiacu": 
-                precoPeixe += this.tam - 50;
+                precoPeixe += this.tam - 20;
             break;
             case "Bacalhau": 
-                precoPeixe += this.tam - 20;
+                precoPeixe += this.tam - 50;
             break;
             case "Linguado": 
                 precoPeixe += this.tam - 30;
             break;
             case "Atum": 
-                precoPeixe += this.tam - 15;
+                precoPeixe += this.tam - 150;
             break;
         }
 
