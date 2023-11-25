@@ -21,9 +21,33 @@ public class Tste{
         e = rand.nextInt(totiente) + 1;
 
         // Chave Privada "d":
+        algoritmoEuclidesEstendido(e, totiente);
 
         // Testes:
         System.out.println(totiente);
         System.out.println(e);
+    }
+
+    public static void algoritmoEuclidesEstendido(int e, int totiente){
+        // Versão original do cálculo =   e * d ≡ 1 (mod ϕ(n))
+        // Transformamos esse cálculo em =   d ≡ e-¹ (mod ϕ(n))
+        totiente = 43;
+        e = 17;
+
+        int a = totiente;
+        int b = e;
+        int c = (a/b);
+        int d = (a%b);
+
+        while(d > 1){
+            a = b;
+            b = d;
+            c = (a/b);
+            d = (a%b);
+            System.out.println(a+" = "+b+" x "+c+" + "+d);
+        }
+
+        
+        
     }
 }
