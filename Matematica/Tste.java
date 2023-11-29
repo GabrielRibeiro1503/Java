@@ -8,8 +8,8 @@ public class Tste{
         Scanner scan = new Scanner(System.in);
 
         // Passo 1 - Definir p e q
-        int p = 17; // tem que ser um número primo random e bem grande
-        int q = 23; // tem que ser um número primo random e bem grande
+        int p = 17; // tem que ser um número primo random e bem grande, normalmente tem uns 600 digitos
+        int q = 23; // tem que ser um número primo random e bem grande, normalmente tem uns 600 digitos
 
         // Passo 2 - Definir o valor de n
         int n = p * q; // produto de q com p
@@ -25,7 +25,7 @@ public class Tste{
 
         // Passo 6 - Definir as chaves públicas e privadas
         System.out.println("Chave pública (e,n): ("+e+","+n+")");
-        System.out.println("Chave pública (d,n): ("+d+","+n+")");
+        System.out.println("Chave privada (d,n): ("+d+","+n+")");
 
         // Passo 7 - Obter a senha numérica
         System.out.println("Digite uma senha numérica: ");
