@@ -2,6 +2,9 @@ package com.javamaven.object;
 
 public class Produto {
 
+    private static int count = 0;
+
+    private int id;
     private String nome;
     private String desc;
     private String categ;
@@ -13,11 +16,17 @@ public class Produto {
     }
 
     public Produto(String nome, String desc, String categ, String valor, String qtd){
+        this.id = count;
         this.nome = nome;
         this.desc = desc;
         this.categ = categ;
         this.valor = valor;
         this.qtd = qtd;
+        Produto.count += 1;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getNome() {
@@ -59,5 +68,7 @@ public class Produto {
     public void setValor(String valor) {
         this.valor = valor;
     }
+
+    
 
 }
