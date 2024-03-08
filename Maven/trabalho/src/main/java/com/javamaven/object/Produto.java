@@ -1,5 +1,7 @@
 package com.javamaven.object;
 
+import org.apache.commons.lang3.StringUtils;
+
 public class Produto {
 
     private static int count = 0;
@@ -10,10 +12,6 @@ public class Produto {
     private String categ;
     private String valor;
     private String qtd;
-
-    public Produto(){
-
-    }
 
     public Produto(String nome, String desc, String categ, String valor, String qtd){
         this.id = count;
@@ -57,18 +55,40 @@ public class Produto {
         return valor;
     }
     
-    public void setQtd(String qtd) {
-        this.qtd = qtd;
+    public void setValor(String valor) {
+        this.valor = valor;
     }
 
     public String getQtd() {
         return qtd;
     }
 
-    public void setValor(String valor) {
-        this.valor = valor;
+    public void setQtd(String qtd) {
+        this.qtd = qtd;
     }
 
-    
+    private Boolean nameVerific(){
+        return StringUtils.isAlphaSpace(getNome()) && getNome().length() > 2;
+    }
+
+    private Boolean descVerific(){
+        return StringUtils.isAlphaSpace(StringUtils.deleteWhitespace(getDesc())) && getDesc().length() > 5;
+    }
+
+    private Boolean categVerific(){
+        return StringUtils.isAlphaSpace(StringUtils.deleteWhitespace(getCateg())) &&  getCateg().length() > 2;
+    }
+
+    private Boolean valorVerific(){
+        return StringUtils.isNumeric(StringUtils.replaceChars(getValor(), ",.", ""));
+    }
+
+    private Boolean qtdVerific(){
+        return StringUtils.isNumeric(getQtd());
+    }
+
+    public Boolean isValid(){
+        return nameVerific() && descVerific() && categVerific() && valorVerific() && qtdVerific();
+    }
 
 }
