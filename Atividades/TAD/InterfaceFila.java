@@ -1,3 +1,4 @@
+
 public interface InterfaceFila<T> {
     void enfileirar(T itemFila); // Adiciona um elemento à pilha.
     T desenfileirar(); // Remove o último elemento da pilha e o retorna.

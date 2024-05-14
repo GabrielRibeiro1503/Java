@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class Fila<T> implements InterfaceFila<T> {
@@ -49,20 +51,12 @@ public class Fila<T> implements InterfaceFila<T> {
     }
 
     public void ordenarFila() {
-        int n = tamanho();
-        for (int i = 1; i < n; i++) {
-            T chave = desenfileirar();
-            int j = i - 1;
-            while (j >= 0 && ((Comparable<T>) itensFila.get(j)).compareTo(chave) > 0) {
-                enfileirar(itensFila.get(j));
-                j--;
+        Collections.sort(itensFila, new Comparator<T>() {
+            @Override
+            public int compare(T o1, T o2) {
+                return ((Comparable<T>) o1).compareTo(o2);
             }
-            enfileirar(chave);
-            // Remove os elementos anteriores a "chave" da fila
-            for (int k = 0; k < i - j - 1; k++) {
-                desenfileirar();
-            }
-        }
+        });
     }
 
 }

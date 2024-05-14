@@ -1,3 +1,4 @@
+
 public interface InterfaceLista<T> {
     
     void inserirInicio(T itemLista); // Insere um elemento no início da lista.

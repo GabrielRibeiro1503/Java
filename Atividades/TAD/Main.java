@@ -8,7 +8,6 @@ public class Main {
 
         // Teste da lista
 
-        /* 
         Lista<Integer> lista = new Lista<>();  
 
         lista.inserirFim(2);
@@ -23,34 +22,29 @@ public class Main {
 
         System.out.println(lista.vazia());
         System.out.println(lista.tamanho());
-        */
 
         // Teste da Fila
 
-        
         Fila<Integer> fila = new Fila<>();
         fila.enfileirar(5);
         fila.enfileirar(2);
         fila.enfileirar(9);
         fila.enfileirar(1);
 
-        //fila.inverter();
+        fila.inverter();
         fila.imprimir();
-        ordenarLista(fila);
+        fila.ordenarFila();
         fila.imprimir();
-        
-        
 
         // Teste Verificar Palindromo 
 
-        /*
         Scanner scan = new Scanner(System.in);
 
         System.out.println("Digite uma palavra para vermos se é palindromo: ");
         String palavra = scan.nextLine();
 
         System.out.println(verificarPalindromo(palavra));
-        */
+        
 
     }
 
@@ -73,18 +67,6 @@ public class Main {
             fim--;
         }
         return true;
-    }
-
-    public static void ordenarLista(Fila<Integer> lista) {
-        for (int i = 1; i < lista.size(); i++) {
-            int chave = lista.get(i);
-            int j = i - 1;
-            while (j >= 0 && lista.get(j) > chave) {
-                lista.set(j + 1, lista.get(j));
-                j--;
-            }
-            lista.set(j + 1, chave);
-        }
     }
 
 }
